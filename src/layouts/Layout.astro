@@ -1,9 +1,9 @@
 ---
-import "../styles/theme.scss";
 import Footer from "@components/layouts/footer";
 import Navigation from "@components/layouts/navigation";
-import { SEO } from "astro-seo";
 import site from "@data/site.json";
+import { SEO } from "astro-seo";
+import "../styles/theme.scss";
 
 export interface SEOProps {
   page_description: string | null;
@@ -31,7 +31,7 @@ const image_alt = seo?.featured_image_alt || site.image_alt;
 const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -45,6 +45,12 @@ const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c&family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
 
     <SEO
